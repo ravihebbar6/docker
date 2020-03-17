@@ -1,0 +1,22 @@
+version: '2'
+
+services:
+    my-drupal:
+        image: drupal:latest
+        ports: 
+            - "8080:80"
+        volumes:
+            - drupal-modules:/var/www/html/modules
+            - drupal-profiles:/var/www/html/profiles
+            - drupal-sites:/var/www/html/sites
+            - drupal-themes:/var/www/html/themes
+    my-postgres:
+        image: postgres:latest
+        environment: 
+            - POSTGRES_PASSWORD=test
+
+volumes:
+    drupal-modules:
+    drupal-profiles:
+    drupal-sites:
+    drupal-themes:
