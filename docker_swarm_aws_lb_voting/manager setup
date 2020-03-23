@@ -1,0 +1,337 @@
+Last login: Thu Mar 19 18:03:04 on ttys007
+cd ..
+cd %                                                                                                                                                                                                        ➜  mms-frontend git:(master) ✗ cd ..
+➜  Development cd ..
+➜  ~ cd Learning 
+➜  Learning l
+total 9568
+drwxr-xr-x  20 rhebbar  545987583   640B Mar 18 11:37 .
+drwxr-xr-x+ 80 rhebbar  545987583   2.5K Mar 23 07:39 ..
+-rw-r--r--@  1 rhebbar  545987583    24K Mar 18 12:57 .DS_Store
+drwxr-xr-x   7 rhebbar  545987583   224B Mar  1 22:06 AWS
+-rw-r--r--@  1 rhebbar  545987583    16K Aug 20  2019 QUIZ-2.docx
+-rw-r--r--@  1 rhebbar  545987583   1.3M Aug 20  2019 Screenshot 2019-08-16 at 7.31.00 PM.png
+-rw-r--r--@  1 rhebbar  545987583   1.1M Feb 19 09:56 UC-52ff3292-4973-4526-8963-d3a76ac3399a.pdf
+-rw-r--r--@  1 rhebbar  545987583   1.1M Aug 20  2019 UC-RMWCF93K.pdf
+-rw-r--r--@  1 rhebbar  545987583   1.1M Feb 19 09:51 UC-b4929665-df49-4da8-845e-94c3c2f0d07c.pdf
+drwxr-xr-x   6 rhebbar  545987583   192B Apr  2  2019 css html
+drwxr-xr-x  15 rhebbar  545987583   480B Mar 18 12:57 docker
+drwxr-xr-x   5 rhebbar  545987583   160B Mar  5 21:16 ember
+drwxr-xr-x   7 rhebbar  545987583   224B Mar 28  2019 js
+-r--------@  1 rhebbar  545987583   1.7K Mar 18 11:34 my_docker_test.pem
+drwxr-xr-x  22 rhebbar  545987583   704B Aug  3  2018 node
+-rw-r--r--   1 rhebbar  545987583   7.5K Feb 27 19:02 npm-debug.log
+drwxr-xr-x   6 rhebbar  545987583   192B Feb  6 20:43 problem-solving
+drwxr-xr-x   5 rhebbar  545987583   160B Apr  3  2019 rails
+drwxr-xr-x   3 rhebbar  545987583    96B Mar 17 11:00 resume
+drwxr-xr-x  15 rhebbar  545987583   480B Feb  6 11:36 ruby
+➜  Learning ls
+AWS                                         UC-b4929665-df49-4da8-845e-94c3c2f0d07c.pdf my_docker_test.pem                          resume
+QUIZ-2.docx                                 css html                                    node                                        ruby
+Screenshot 2019-08-16 at 7.31.00 PM.png     docker                                      npm-debug.log
+UC-52ff3292-4973-4526-8963-d3a76ac3399a.pdf ember                                       problem-solving
+UC-RMWCF93K.pdf                             js                                          rails
+➜  Learning cd docker 
+➜  docker git:(master) ✗ ls
+README.md                  docker_compose_image_test  docker_nginx_command_test  docker_volume_test         my_docker_test.pem
+docker_bind_mount_test     docker_compose_test        docker_swarm_aws_lb_voting my_docker_test             udemy-docker-mastery
+➜  docker git:(master) ✗ ssh ec2-user@172.31.35.38
+
+ssh: connect to host 172.31.35.38 port 22: Operation timed out
+➜  docker git:(master) ✗ 
+➜  docker git:(master) ✗ 
+➜  docker git:(master) ✗ ssh ec2-user@172.31.35.38
+^C
+➜  docker git:(master) ✗ ssh ec2-34-239-102-206.compute-1.amazonaws.com 
+➜  docker git:(master) ✗ ssh ec2-user@54.225.21.206
+The authenticity of host '54.225.21.206 (54.225.21.206)' can't be established.
+ECDSA key fingerprint is SHA256:qctZ0VRoE+j+T9lnyZBxpo11yZ/RDmf+b4H9Tt8qaOo.
+Are you sure you want to continue connecting (yes/no)? no
+Host key verification failed.
+➜  docker git:(master) ✗ ssh-add l
+l: No such file or directory
+➜  docker git:(master) ✗ ssh-add -l
+2048 SHA256:4Xr8vPgmNUvDQVDoNJTlhqAM+zBPudmpNmTi+n4LTaI my_docker_test.pem (RSA)
+➜  docker git:(master) ✗ ssh ec2-user@172.31.35.38 
+^C
+➜  docker git:(master) ✗ ssh ec2-user@ec2-54-225-21-206.compute-1.amazonaws.com
+The authenticity of host 'ec2-54-225-21-206.compute-1.amazonaws.com (54.225.21.206)' can't be established.
+ECDSA key fingerprint is SHA256:qctZ0VRoE+j+T9lnyZBxpo11yZ/RDmf+b4H9Tt8qaOo.
+Are you sure you want to continue connecting (yes/no)? no
+Host key verification failed.
+➜  docker git:(master) ✗ ssh ec2-user@ec2-54-225-21-206.compute-1.amazonaws.com
+The authenticity of host 'ec2-54-225-21-206.compute-1.amazonaws.com (54.225.21.206)' can't be established.
+ECDSA key fingerprint is SHA256:qctZ0VRoE+j+T9lnyZBxpo11yZ/RDmf+b4H9Tt8qaOo.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added 'ec2-54-225-21-206.compute-1.amazonaws.com,54.225.21.206' (ECDSA) to the list of known hosts.
+
+       __|  __|_  )
+       _|  (     /   Amazon Linux AMI
+      ___|\___|___|
+
+https://aws.amazon.com/amazon-linux-ami/2018.03-release-notes/
+7 package(s) needed for security, out of 11 available
+Run "sudo yum update" to apply all updates.
+-bash: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory
+[ec2-user@ip-172-31-35-38 ~]$ exit
+logout
+Connection to ec2-54-225-21-206.compute-1.amazonaws.com closed.
+➜  docker git:(master) ✗ ssh ec2-user@54.225.21.206
+Last login: Mon Mar 23 04:06:53 2020 from 49.206.11.49
+
+       __|  __|_  )
+       _|  (     /   Amazon Linux AMI
+      ___|\___|___|
+
+https://aws.amazon.com/amazon-linux-ami/2018.03-release-notes/
+7 package(s) needed for security, out of 11 available
+Run "sudo yum update" to apply all updates.
+-bash: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory
+[ec2-user@ip-172-31-35-38 ~]$ exit
+logout
+Connection to 54.225.21.206 closed.
+➜  docker git:(master) ✗ ssh ec2-user@172.31.35.38
+ssh: connect to host 172.31.35.38 port 22: Operation timed out
+➜  docker git:(master) ✗ ssh ec2-user@54.225.21.206
+Last login: Mon Mar 23 04:07:09 2020 from 49.206.11.49
+
+       __|  __|_  )
+       _|  (     /   Amazon Linux AMI
+      ___|\___|___|
+
+https://aws.amazon.com/amazon-linux-ami/2018.03-release-notes/
+7 package(s) needed for security, out of 11 available
+Run "sudo yum update" to apply all updates.
+-bash: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory
+[ec2-user@ip-172-31-35-38 ~]$ sudo yum install docker
+Failed to set locale, defaulting to C
+Loaded plugins: priorities, update-motd, upgrade-helper
+amzn-main                                                                                                                                                                            | 2.1 kB  00:00:00     
+amzn-updates                                                                                                                                                                         | 2.5 kB  00:00:00     
+Resolving Dependencies
+--> Running transaction check
+---> Package docker.x86_64 0:18.09.9ce-2.52.amzn1 will be installed
+--> Processing Dependency: runc = 1.0.0 for package: docker-18.09.9ce-2.52.amzn1.x86_64
+--> Processing Dependency: containerd = 1.2.6 for package: docker-18.09.9ce-2.52.amzn1.x86_64
+--> Processing Dependency: xfsprogs for package: docker-18.09.9ce-2.52.amzn1.x86_64
+--> Processing Dependency: pigz for package: docker-18.09.9ce-2.52.amzn1.x86_64
+--> Processing Dependency: libseccomp.so.2()(64bit) for package: docker-18.09.9ce-2.52.amzn1.x86_64
+--> Running transaction check
+---> Package containerd.x86_64 0:1.2.6-1.2.amzn1 will be installed
+---> Package libseccomp.x86_64 0:2.3.1-2.4.amzn1 will be installed
+---> Package pigz.x86_64 0:2.3.3-1.6.amzn1 will be installed
+---> Package runc.x86_64 0:1.0.0-0.1.20190510.git2b18fe1.0.amzn1 will be installed
+---> Package xfsprogs.x86_64 0:4.5.0-18.23.amzn1 will be installed
+--> Finished Dependency Resolution
+
+Dependencies Resolved
+
+============================================================================================================================================================================================================
+ Package                                    Arch                                   Version                                                               Repository                                    Size
+============================================================================================================================================================================================================
+Installing:
+ docker                                     x86_64                                 18.09.9ce-2.52.amzn1                                                  amzn-updates                                  35 M
+Installing for dependencies:
+ containerd                                 x86_64                                 1.2.6-1.2.amzn1                                                       amzn-updates                                  26 M
+ libseccomp                                 x86_64                                 2.3.1-2.4.amzn1                                                       amzn-main                                     79 k
+ pigz                                       x86_64                                 2.3.3-1.6.amzn1                                                       amzn-main                                     71 k
+ runc                                       x86_64                                 1.0.0-0.1.20190510.git2b18fe1.0.amzn1                                 amzn-updates                                 2.3 M
+ xfsprogs                                   x86_64                                 4.5.0-18.23.amzn1                                                     amzn-updates                                 1.7 M
+
+Transaction Summary
+============================================================================================================================================================================================================
+Install  1 Package (+5 Dependent packages)
+
+Total download size: 65 M
+Installed size: 223 M
+Is this ok [y/d/N]: yes
+Downloading packages:
+(1/6): pigz-2.3.3-1.6.amzn1.x86_64.rpm                                                                                                                                               |  71 kB  00:00:00     
+(2/6): libseccomp-2.3.1-2.4.amzn1.x86_64.rpm                                                                                                                                         |  79 kB  00:00:00     
+(3/6): xfsprogs-4.5.0-18.23.amzn1.x86_64.rpm                                                                                                                                         | 1.7 MB  00:00:00     
+(4/6): runc-1.0.0-0.1.20190510.git2b18fe1.0.amzn1.x86_64.rpm                                                                                                                         | 2.3 MB  00:00:01     
+(5/6): containerd-1.2.6-1.2.amzn1.x86_64.rpm                                                                                                                                         |  26 MB  00:00:03     
+(6/6): docker-18.09.9ce-2.52.amzn1.x86_64.rpm                                                                                                                                        |  35 MB  00:00:04     
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Total                                                                                                                                                                        15 MB/s |  65 MB  00:00:04     
+Running transaction check
+Running transaction test
+Transaction test succeeded
+Running transaction
+  Installing : libseccomp-2.3.1-2.4.amzn1.x86_64                                                                                                                                                        1/6 
+  Installing : runc-1.0.0-0.1.20190510.git2b18fe1.0.amzn1.x86_64                                                                                                                                        2/6 
+  Installing : containerd-1.2.6-1.2.amzn1.x86_64                                                                                                                                                        3/6 
+  Installing : pigz-2.3.3-1.6.amzn1.x86_64                                                                                                                                                              4/6 
+  Installing : xfsprogs-4.5.0-18.23.amzn1.x86_64                                                                                                                                                        5/6 
+  Installing : docker-18.09.9ce-2.52.amzn1.x86_64                                                                                                                                                       6/6 
+  Verifying  : docker-18.09.9ce-2.52.amzn1.x86_64                                                                                                                                                       1/6 
+  Verifying  : xfsprogs-4.5.0-18.23.amzn1.x86_64                                                                                                                                                        2/6 
+  Verifying  : libseccomp-2.3.1-2.4.amzn1.x86_64                                                                                                                                                        3/6 
+  Verifying  : containerd-1.2.6-1.2.amzn1.x86_64                                                                                                                                                        4/6 
+  Verifying  : runc-1.0.0-0.1.20190510.git2b18fe1.0.amzn1.x86_64                                                                                                                                        5/6 
+  Verifying  : pigz-2.3.3-1.6.amzn1.x86_64                                                                                                                                                              6/6 
+
+Installed:
+  docker.x86_64 0:18.09.9ce-2.52.amzn1                                                                                                                                                                      
+
+Dependency Installed:
+  containerd.x86_64 0:1.2.6-1.2.amzn1   libseccomp.x86_64 0:2.3.1-2.4.amzn1   pigz.x86_64 0:2.3.3-1.6.amzn1   runc.x86_64 0:1.0.0-0.1.20190510.git2b18fe1.0.amzn1   xfsprogs.x86_64 0:4.5.0-18.23.amzn1  
+
+Complete!
+[ec2-user@ip-172-31-35-38 ~]$ sudo groupadd docker
+groupadd: group 'docker' already exists
+[ec2-user@ip-172-31-35-38 ~]$ sudo usermod -aG docker $USER
+[ec2-user@ip-172-31-35-38 ~]$ docker init
+docker: 'init' is not a docker command.
+See 'docker --help'
+[ec2-user@ip-172-31-35-38 ~]$ docker swarm init
+Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?
+[ec2-user@ip-172-31-35-38 ~]$ sudo service docker statt
+Usage: /etc/init.d/docker {start|stop|status|restart|condrestart|try-restart|reload|force-reload}
+[ec2-user@ip-172-31-35-38 ~]$ sudo service docker start
+Starting cgconfig service:                                 [  OK  ]
+Starting docker:	.                                  [  OK  ]
+[ec2-user@ip-172-31-35-38 ~]$ docker swarm init
+Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Post http://%2Fvar%2Frun%2Fdocker.sock/v1.39/swarm/init: dial unix /var/run/docker.sock: connect: permission denied
+[ec2-user@ip-172-31-35-38 ~]$ exit
+logout
+Connection to 54.225.21.206 closed.
+➜  docker git:(master) ✗ ssh ec2-user@54.225.21.206
+Last login: Mon Mar 23 04:11:00 2020 from 49.206.11.49
+
+       __|  __|_  )
+       _|  (     /   Amazon Linux AMI
+      ___|\___|___|
+
+https://aws.amazon.com/amazon-linux-ami/2018.03-release-notes/
+7 package(s) needed for security, out of 11 available
+Run "sudo yum update" to apply all updates.
+-bash: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory
+[ec2-user@ip-172-31-35-38 ~]$ docker swarm init
+Swarm initialized: current node (am5auu3d4bkmtyeeens3bkv5v) is now a manager.
+
+To add a worker to this swarm, run the following command:
+
+    docker swarm join --token SWMTKN-1-1yfo8x54kxwkrfu18jb9znun9l9roc0znefbjfa0s5f1f9tiu3-96d15ae579ynb0gizytia2ypw 172.31.35.38:2377
+
+To add a manager to this swarm, run 'docker swarm join-token manager' and follow the instructions.
+
+[ec2-user@ip-172-31-35-38 ~]$ docker swarm rm
+
+Usage:	docker swarm COMMAND
+
+Manage Swarm
+
+Commands:
+  ca          Display and rotate the root CA
+  init        Initialize a swarm
+  join        Join a swarm as a node and/or manager
+  join-token  Manage join tokens
+  leave       Leave the swarm
+  unlock      Unlock swarm
+  unlock-key  Manage the unlock key
+  update      Update the swarm
+
+Run 'docker swarm COMMAND --help' for more information on a command.
+[ec2-user@ip-172-31-35-38 ~]$ docker swarm leave
+Error response from daemon: You are attempting to leave the swarm on a node that is participating as a manager. Removing the last manager erases all current state of the swarm. Use `--force` to ignore this message.
+[ec2-user@ip-172-31-35-38 ~]$ docker swarm leave -f
+Node left the swarm.
+[ec2-user@ip-172-31-35-38 ~]$ docker swarm init --advertise-addr 172.31.35.38
+Swarm initialized: current node (un8hg267qwhwg2xplymw1dzvf) is now a manager.
+
+To add a worker to this swarm, run the following command:
+
+    docker swarm join --token SWMTKN-1-64cpxvkwaw56n89rbyjm6jzhio52vxtw3zhlb784k6wmfkgboa-9dl0ed71oxpafsbljk1nqvj2o 172.31.35.38:2377
+
+To add a manager to this swarm, run 'docker swarm join-token manager' and follow the instructions.
+
+[ec2-user@ip-172-31-35-38 ~]$ docker swarm join-token manager
+To add a manager to this swarm, run the following command:
+
+    docker swarm join --token SWMTKN-1-64cpxvkwaw56n89rbyjm6jzhio52vxtw3zhlb784k6wmfkgboa-21i5nmhip898knk7p298tot7p 172.31.35.38:2377
+
+[ec2-user@ip-172-31-35-38 ~]$ docker swarm ls
+
+Usage:	docker swarm COMMAND
+
+Manage Swarm
+
+Commands:
+  ca          Display and rotate the root CA
+  init        Initialize a swarm
+  join        Join a swarm as a node and/or manager
+  join-token  Manage join tokens
+  leave       Leave the swarm
+  unlock      Unlock swarm
+  unlock-key  Manage the unlock key
+  update      Update the swarm
+
+Run 'docker swarm COMMAND --help' for more information on a command.
+[ec2-user@ip-172-31-35-38 ~]$ docker node l
+
+Usage:	docker node COMMAND
+
+Manage Swarm nodes
+
+Commands:
+  demote      Demote one or more nodes from manager in the swarm
+  inspect     Display detailed information on one or more nodes
+  ls          List nodes in the swarm
+  promote     Promote one or more nodes to manager in the swarm
+  ps          List tasks running on one or more nodes, defaults to current node
+  rm          Remove one or more nodes from the swarm
+  update      Update a node
+
+Run 'docker node COMMAND --help' for more information on a command.
+[ec2-user@ip-172-31-35-38 ~]$ docker node ls
+ID                            HOSTNAME            STATUS              AVAILABILITY        MANAGER STATUS      ENGINE VERSION
+un8hg267qwhwg2xplymw1dzvf *   ip-172-31-35-38     Ready               Active              Leader              18.09.9-ce
+pwk85e1mf5kkm4ijbme89w60i     ip-172-31-35-221    Ready               Active              Reachable           18.09.9-ce
+rzsi5mue5zjix0ys75rmljq34     ip-172-31-41-135    Ready               Active              Reachable           18.09.9-ce
+[ec2-user@ip-172-31-35-38 ~]$ 
+Broadcast message from root@ip-172-31-35-38
+	(unknown) at 4:26 ...
+
+The system is going down for power off NOW!
+Connection to 54.225.21.206 closed by remote host.
+Connection to 54.225.21.206 closed.
+➜  docker git:(master) ✗ ssh ec2-user@54.225.21.206
+^C
+➜  docker git:(master) ✗ ssh ec2-user@54.225.21.206
+^C
+➜  docker git:(master) ✗ ssh ec2-user@34.239.49.44
+
+The authenticity of host '34.239.49.44 (34.239.49.44)' can't be established.
+ECDSA key fingerprint is SHA256:qctZ0VRoE+j+T9lnyZBxpo11yZ/RDmf+b4H9Tt8qaOo.
+Are you sure you want to continue connecting (yes/no)? ye
+Please type 'yes' or 'no': yes
+Warning: Permanently added '34.239.49.44' (ECDSA) to the list of known hosts.
+Last login: Mon Mar 23 04:15:34 2020 from 49.206.11.49
+
+       __|  __|_  )
+       _|  (     /   Amazon Linux AMI
+      ___|\___|___|
+
+https://aws.amazon.com/amazon-linux-ami/2018.03-release-notes/
+7 package(s) needed for security, out of 11 available
+Run "sudo yum update" to apply all updates.
+-bash: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory
+[ec2-user@ip-172-31-35-38 ~]$ docker swarm join-token worker
+To add a worker to this swarm, run the following command:
+
+    docker swarm join --token SWMTKN-1-64cpxvkwaw56n89rbyjm6jzhio52vxtw3zhlb784k6wmfkgboa-9dl0ed71oxpafsbljk1nqvj2o 172.31.35.38:2377
+
+[ec2-user@ip-172-31-35-38 ~]$ docker node ls
+ID                            HOSTNAME            STATUS              AVAILABILITY        MANAGER STATUS      ENGINE VERSION
+ccum3310gck2foirq49n0n62y     ip-172-31-33-27     Ready               Active                                  18.09.9-ce
+un8hg267qwhwg2xplymw1dzvf *   ip-172-31-35-38     Ready               Active              Reachable           18.09.9-ce
+pwk85e1mf5kkm4ijbme89w60i     ip-172-31-35-221    Ready               Active              Reachable           18.09.9-ce
+fpmen3v7nn8oqed32lkj6pcn8     ip-172-31-39-88     Ready               Active                                  18.09.9-ce
+6aoynr61q9wdtaif53i8uz6qm     ip-172-31-40-87     Ready               Active                                  18.09.9-ce
+z27j4oqgr9bqdddj7i91orxlj     ip-172-31-40-251    Ready               Active                                  18.09.9-ce
+778m9dj24kx5n32gyyt77ym2a     ip-172-31-41-6      Ready               Active                                  18.09.9-ce
+rzsi5mue5zjix0ys75rmljq34     ip-172-31-41-135    Ready               Active              Leader              18.09.9-ce
+o7o55tfb23bm5mne3diof9j5r     ip-172-31-45-190    Ready               Active                                  18.09.9-ce
+x8z0f5y4ja77myuy98t054as9     ip-172-31-47-93     Ready               Active                                  18.09.9-ce
+[ec2-user@ip-172-31-35-38 ~]$ 

@@ -1,0 +1,846 @@
+Last login: Mon Mar 23 09:41:10 on ttys003
+➜  docker git:(master) ✗ ssh ec2-user@3.84.170.28
+The authenticity of host '3.84.170.28 (3.84.170.28)' can't be established.
+ECDSA key fingerprint is SHA256:sYIWRRfY68H075iAprGmQQ07pK44S/U/rSfXhCzc32E.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added '3.84.170.28' (ECDSA) to the list of known hosts.
+
+       __|  __|_  )
+       _|  (     /   Amazon Linux AMI
+      ___|\___|___|
+
+https://aws.amazon.com/amazon-linux-ami/2018.03-release-notes/
+7 package(s) needed for security, out of 11 available
+Run "sudo yum update" to apply all updates.
+-bash: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory
+[ec2-user@ip-172-31-35-221 ~]$ sudo yum install docker
+Failed to set locale, defaulting to C
+Loaded plugins: priorities, update-motd, upgrade-helper
+amzn-main                                                                                                                                                                            | 2.1 kB  00:00:00     
+amzn-updates                                                                                                                                                                         | 2.5 kB  00:00:00     
+Resolving Dependencies
+--> Running transaction check
+---> Package docker.x86_64 0:18.09.9ce-2.52.amzn1 will be installed
+--> Processing Dependency: runc = 1.0.0 for package: docker-18.09.9ce-2.52.amzn1.x86_64
+--> Processing Dependency: containerd = 1.2.6 for package: docker-18.09.9ce-2.52.amzn1.x86_64
+--> Processing Dependency: xfsprogs for package: docker-18.09.9ce-2.52.amzn1.x86_64
+--> Processing Dependency: pigz for package: docker-18.09.9ce-2.52.amzn1.x86_64
+--> Processing Dependency: libseccomp.so.2()(64bit) for package: docker-18.09.9ce-2.52.amzn1.x86_64
+--> Running transaction check
+---> Package containerd.x86_64 0:1.2.6-1.2.amzn1 will be installed
+---> Package libseccomp.x86_64 0:2.3.1-2.4.amzn1 will be installed
+---> Package pigz.x86_64 0:2.3.3-1.6.amzn1 will be installed
+---> Package runc.x86_64 0:1.0.0-0.1.20190510.git2b18fe1.0.amzn1 will be installed
+---> Package xfsprogs.x86_64 0:4.5.0-18.23.amzn1 will be installed
+--> Finished Dependency Resolution
+
+Dependencies Resolved
+
+============================================================================================================================================================================================================
+ Package                                    Arch                                   Version                                                               Repository                                    Size
+============================================================================================================================================================================================================
+Installing:
+ docker                                     x86_64                                 18.09.9ce-2.52.amzn1                                                  amzn-updates                                  35 M
+Installing for dependencies:
+ containerd                                 x86_64                                 1.2.6-1.2.amzn1                                                       amzn-updates                                  26 M
+ libseccomp                                 x86_64                                 2.3.1-2.4.amzn1                                                       amzn-main                                     79 k
+ pigz                                       x86_64                                 2.3.3-1.6.amzn1                                                       amzn-main                                     71 k
+ runc                                       x86_64                                 1.0.0-0.1.20190510.git2b18fe1.0.amzn1                                 amzn-updates                                 2.3 M
+ xfsprogs                                   x86_64                                 4.5.0-18.23.amzn1                                                     amzn-updates                                 1.7 M
+
+Transaction Summary
+============================================================================================================================================================================================================
+Install  1 Package (+5 Dependent packages)
+
+Total download size: 65 M
+Installed size: 223 M
+Is this ok [y/d/N]: y
+Downloading packages:
+(1/6): libseccomp-2.3.1-2.4.amzn1.x86_64.rpm                                                                                                                                         |  79 kB  00:00:00     
+(2/6): pigz-2.3.3-1.6.amzn1.x86_64.rpm                                                                                                                                               |  71 kB  00:00:00     
+(3/6): runc-1.0.0-0.1.20190510.git2b18fe1.0.amzn1.x86_64.rpm                                                                                                                         | 2.3 MB  00:00:00     
+(4/6): xfsprogs-4.5.0-18.23.amzn1.x86_64.rpm                                                                                                                                         | 1.7 MB  00:00:00     
+(5/6): containerd-1.2.6-1.2.amzn1.x86_64.rpm                                                                                                                                         |  26 MB  00:00:03     
+(6/6): docker-18.09.9ce-2.52.amzn1.x86_64.rpm                                                                                                                                        |  35 MB  00:00:05     
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Total                                                                                                                                                                        12 MB/s |  65 MB  00:00:05     
+Running transaction check
+Running transaction test
+Transaction test succeeded
+Running transaction
+  Installing : libseccomp-2.3.1-2.4.amzn1.x86_64                                                                                                                                                        1/6 
+  Installing : runc-1.0.0-0.1.20190510.git2b18fe1.0.amzn1.x86_64                                                                                                                                        2/6 
+  Installing : containerd-1.2.6-1.2.amzn1.x86_64                                                                                                                                                        3/6 
+  Installing : pigz-2.3.3-1.6.amzn1.x86_64                                                                                                                                                              4/6 
+  Installing : xfsprogs-4.5.0-18.23.amzn1.x86_64                                                                                                                                                        5/6 
+  Installing : docker-18.09.9ce-2.52.amzn1.x86_64                                                                                                                                                       6/6 
+  Verifying  : docker-18.09.9ce-2.52.amzn1.x86_64                                                                                                                                                       1/6 
+  Verifying  : xfsprogs-4.5.0-18.23.amzn1.x86_64                                                                                                                                                        2/6 
+  Verifying  : libseccomp-2.3.1-2.4.amzn1.x86_64                                                                                                                                                        3/6 
+  Verifying  : containerd-1.2.6-1.2.amzn1.x86_64                                                                                                                                                        4/6 
+  Verifying  : runc-1.0.0-0.1.20190510.git2b18fe1.0.amzn1.x86_64                                                                                                                                        5/6 
+  Verifying  : pigz-2.3.3-1.6.amzn1.x86_64                                                                                                                                                              6/6 
+
+Installed:
+  docker.x86_64 0:18.09.9ce-2.52.amzn1                                                                                                                                                                      
+
+Dependency Installed:
+  containerd.x86_64 0:1.2.6-1.2.amzn1   libseccomp.x86_64 0:2.3.1-2.4.amzn1   pigz.x86_64 0:2.3.3-1.6.amzn1   runc.x86_64 0:1.0.0-0.1.20190510.git2b18fe1.0.amzn1   xfsprogs.x86_64 0:4.5.0-18.23.amzn1  
+
+Complete!
+[ec2-user@ip-172-31-35-221 ~]$ sudo groupadd docker
+groupadd: group 'docker' already exists
+[ec2-user@ip-172-31-35-221 ~]$ sudo usermod -aG docker $USER
+[ec2-user@ip-172-31-35-221 ~]$ sudo service docker start
+Starting cgconfig service:                                 [  OK  ]
+Starting docker:	.                                  [  OK  ]
+[ec2-user@ip-172-31-35-221 ~]$ exit
+logout
+Connection to 3.84.170.28 closed.
+➜  docker git:(master) ✗ ssh ec2-user@3.84.170.28
+Last login: Mon Mar 23 04:12:03 2020 from 49.206.11.49
+
+       __|  __|_  )
+       _|  (     /   Amazon Linux AMI
+      ___|\___|___|
+
+https://aws.amazon.com/amazon-linux-ami/2018.03-release-notes/
+7 package(s) needed for security, out of 11 available
+Run "sudo yum update" to apply all updates.
+-bash: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory
+[ec2-user@ip-172-31-35-221 ~]$ dial unix /var/run/docker.sock: connect: permission denied
+-bash: dial: command not found
+[ec2-user@ip-172-31-35-221 ~]$ docker swarm join --token SWMTKN-1-64cpxvkwaw56n89rbyjm6jzhio52vxtw3zhlb784k6wmfkgboa-21i5nmhip898knk7p298tot7p 172.31.35.38:2377
+This node joined a swarm as a manager.
+[ec2-user@ip-172-31-35-221 ~]$ docker node ls
+ID                            HOSTNAME            STATUS              AVAILABILITY        MANAGER STATUS      ENGINE VERSION
+un8hg267qwhwg2xplymw1dzvf     ip-172-31-35-38     Unknown             Active              Unreachable         18.09.9-ce
+pwk85e1mf5kkm4ijbme89w60i *   ip-172-31-35-221    Ready               Active              Reachable           18.09.9-ce
+rzsi5mue5zjix0ys75rmljq34     ip-172-31-41-135    Ready               Active              Leader              18.09.9-ce
+[ec2-user@ip-172-31-35-221 ~]$ exit
+logout
+Connection to 3.84.170.28 closed.
+➜  docker git:(master) ✗ ssh ec2-user@
+^C
+➜  docker git:(master) ✗ ssh ec2-user@3.90.59.181
+
+The authenticity of host '3.90.59.181 (3.90.59.181)' can't be established.
+ECDSA key fingerprint is SHA256:vbkk5s7pX13N3uurVB2G8Tlmo00xDnEtQK6mzDbDKjU.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added '3.90.59.181' (ECDSA) to the list of known hosts.
+
+       __|  __|_  )
+       _|  (     /   Amazon Linux AMI
+      ___|\___|___|
+
+https://aws.amazon.com/amazon-linux-ami/2018.03-release-notes/
+7 package(s) needed for security, out of 11 available
+Run "sudo yum update" to apply all updates.
+-bash: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory
+[ec2-user@ip-172-31-40-87 ~]$ sudo yum install docker
+Failed to set locale, defaulting to C
+Loaded plugins: priorities, update-motd, upgrade-helper
+Resolving Dependencies
+--> Running transaction check
+---> Package docker.x86_64 0:18.09.9ce-2.52.amzn1 will be installed
+--> Processing Dependency: runc = 1.0.0 for package: docker-18.09.9ce-2.52.amzn1.x86_64
+--> Processing Dependency: containerd = 1.2.6 for package: docker-18.09.9ce-2.52.amzn1.x86_64
+--> Processing Dependency: xfsprogs for package: docker-18.09.9ce-2.52.amzn1.x86_64
+--> Processing Dependency: pigz for package: docker-18.09.9ce-2.52.amzn1.x86_64
+--> Processing Dependency: libseccomp.so.2()(64bit) for package: docker-18.09.9ce-2.52.amzn1.x86_64
+--> Running transaction check
+---> Package containerd.x86_64 0:1.2.6-1.2.amzn1 will be installed
+---> Package libseccomp.x86_64 0:2.3.1-2.4.amzn1 will be installed
+---> Package pigz.x86_64 0:2.3.3-1.6.amzn1 will be installed
+---> Package runc.x86_64 0:1.0.0-0.1.20190510.git2b18fe1.0.amzn1 will be installed
+---> Package xfsprogs.x86_64 0:4.5.0-18.23.amzn1 will be installed
+--> Finished Dependency Resolution
+
+Dependencies Resolved
+
+============================================================================================================================================================================================================
+ Package                                    Arch                                   Version                                                               Repository                                    Size
+============================================================================================================================================================================================================
+Installing:
+ docker                                     x86_64                                 18.09.9ce-2.52.amzn1                                                  amzn-updates                                  35 M
+Installing for dependencies:
+ containerd                                 x86_64                                 1.2.6-1.2.amzn1                                                       amzn-updates                                  26 M
+ libseccomp                                 x86_64                                 2.3.1-2.4.amzn1                                                       amzn-main                                     79 k
+ pigz                                       x86_64                                 2.3.3-1.6.amzn1                                                       amzn-main                                     71 k
+ runc                                       x86_64                                 1.0.0-0.1.20190510.git2b18fe1.0.amzn1                                 amzn-updates                                 2.3 M
+ xfsprogs                                   x86_64                                 4.5.0-18.23.amzn1                                                     amzn-updates                                 1.7 M
+
+Transaction Summary
+============================================================================================================================================================================================================
+Install  1 Package (+5 Dependent packages)
+
+Total download size: 65 M
+Installed size: 223 M
+Is this ok [y/d/N]: y
+Downloading packages:
+(1/6): libseccomp-2.3.1-2.4.amzn1.x86_64.rpm                                                                                                                                         |  79 kB  00:00:00     
+(2/6): pigz-2.3.3-1.6.amzn1.x86_64.rpm                                                                                                                                               |  71 kB  00:00:00     
+(3/6): runc-1.0.0-0.1.20190510.git2b18fe1.0.amzn1.x86_64.rpm                                                                                                                         | 2.3 MB  00:00:00     
+(4/6): xfsprogs-4.5.0-18.23.amzn1.x86_64.rpm                                                                                                                                         | 1.7 MB  00:00:00     
+(5/6): containerd-1.2.6-1.2.amzn1.x86_64.rpm                                                                                                                                         |  26 MB  00:00:02     
+(6/6): docker-18.09.9ce-2.52.amzn1.x86_64.rpm                                                                                                                                        |  35 MB  00:00:06     
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Total                                                                                                                                                                       9.3 MB/s |  65 MB  00:00:06     
+Running transaction check
+Running transaction test
+Transaction test succeeded
+Running transaction
+  Installing : libseccomp-2.3.1-2.4.amzn1.x86_64                                                                                                                                                        1/6 
+  Installing : runc-1.0.0-0.1.20190510.git2b18fe1.0.amzn1.x86_64                                                                                                                                        2/6 
+  Installing : containerd-1.2.6-1.2.amzn1.x86_64                                                                                                                                                        3/6 
+  Installing : pigz-2.3.3-1.6.amzn1.x86_64                                                                                                                                                              4/6 
+  Installing : xfsprogs-4.5.0-18.23.amzn1.x86_64                                                                                                                                                        5/6 
+  Installing : docker-18.09.9ce-2.52.amzn1.x86_64                                                                                                                                                       6/6 
+  Verifying  : docker-18.09.9ce-2.52.amzn1.x86_64                                                                                                                                                       1/6 
+  Verifying  : xfsprogs-4.5.0-18.23.amzn1.x86_64                                                                                                                                                        2/6 
+  Verifying  : libseccomp-2.3.1-2.4.amzn1.x86_64                                                                                                                                                        3/6 
+  Verifying  : containerd-1.2.6-1.2.amzn1.x86_64                                                                                                                                                        4/6 
+  Verifying  : runc-1.0.0-0.1.20190510.git2b18fe1.0.amzn1.x86_64                                                                                                                                        5/6 
+  Verifying  : pigz-2.3.3-1.6.amzn1.x86_64                                                                                                                                                              6/6 
+
+Installed:
+  docker.x86_64 0:18.09.9ce-2.52.amzn1                                                                                                                                                                      
+
+Dependency Installed:
+  containerd.x86_64 0:1.2.6-1.2.amzn1   libseccomp.x86_64 0:2.3.1-2.4.amzn1   pigz.x86_64 0:2.3.3-1.6.amzn1   runc.x86_64 0:1.0.0-0.1.20190510.git2b18fe1.0.amzn1   xfsprogs.x86_64 0:4.5.0-18.23.amzn1  
+
+Complete!
+[ec2-user@ip-172-31-40-87 ~]$ sudo usermod -aG docker $USER
+[ec2-user@ip-172-31-40-87 ~]$ sudo docker swarm join --token SWMTKN-1-64cpxvkwaw56n89rbyjm6jzhio52vxtw3zhlb784k6wmfkgboa-9dl0ed71oxpafsbljk1nqvj2o 172.31.41.135:2377
+Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?
+[ec2-user@ip-172-31-40-87 ~]$ sudo service docker start
+Starting cgconfig service:                                 [  OK  ]
+Starting docker:	.                                  [  OK  ]
+[ec2-user@ip-172-31-40-87 ~]$ docker swarm join --token SWMTKN-1-64cpxvkwaw56n89rbyjm6jzhio52vxtw3zhlb784k6wmfkgboa-9dl0ed71oxpafsbljk1nqvj2o 172.31.41.135:2377
+Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Post http://%2Fvar%2Frun%2Fdocker.sock/v1.39/swarm/join: dial unix /var/run/docker.sock: connect: permission denied
+[ec2-user@ip-172-31-40-87 ~]$ exit
+logout
+Connection to 3.90.59.181 closed.
+➜  docker git:(master) ✗ ssh ec2-user@3.90.59.181
+
+Last login: Mon Mar 23 04:30:23 2020 from 49.206.11.49
+
+       __|  __|_  )
+       _|  (     /   Amazon Linux AMI
+      ___|\___|___|
+
+https://aws.amazon.com/amazon-linux-ami/2018.03-release-notes/
+7 package(s) needed for security, out of 11 available
+Run "sudo yum update" to apply all updates.
+-bash: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory
+[ec2-user@ip-172-31-40-87 ~]$ docker swarm join --token SWMTKN-1-64cpxvkwaw56n89rbyjm6jzhio52vxtw3zhlb784k6wmfkgboa-9dl0ed71oxpafsbljk1nqvj2o 172.31.41.135:2377
+This node joined a swarm as a worker.
+[ec2-user@ip-172-31-40-87 ~]$ exit
+logout
+Connection to 3.90.59.181 closed.
+➜  docker git:(master) ✗ ssh ec2-user@34.239.185.118
+The authenticity of host '34.239.185.118 (34.239.185.118)' can't be established.
+ECDSA key fingerprint is SHA256:ZhsoeCXMK0dZBOjUQ2M7POR7rPcEYjBh57ueQ1zzTNw.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added '34.239.185.118' (ECDSA) to the list of known hosts.
+
+       __|  __|_  )
+       _|  (     /   Amazon Linux AMI
+      ___|\___|___|
+
+https://aws.amazon.com/amazon-linux-ami/2018.03-release-notes/
+7 package(s) needed for security, out of 11 available
+Run "sudo yum update" to apply all updates.
+-bash: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory
+[ec2-user@ip-172-31-41-6 ~]$ yum install docker
+Failed to set locale, defaulting to C
+Loaded plugins: priorities, update-motd, upgrade-helper
+You need to be root to perform this command.
+[ec2-user@ip-172-31-41-6 ~]$ sudo yum install docker
+Failed to set locale, defaulting to C
+Loaded plugins: priorities, update-motd, upgrade-helper
+amzn-main                                                                                                                                                                            | 2.1 kB  00:00:00     
+amzn-updates                                                                                                                                                                         | 2.5 kB  00:00:00     
+Resolving Dependencies
+--> Running transaction check
+---> Package docker.x86_64 0:18.09.9ce-2.52.amzn1 will be installed
+--> Processing Dependency: runc = 1.0.0 for package: docker-18.09.9ce-2.52.amzn1.x86_64
+--> Processing Dependency: containerd = 1.2.6 for package: docker-18.09.9ce-2.52.amzn1.x86_64
+--> Processing Dependency: xfsprogs for package: docker-18.09.9ce-2.52.amzn1.x86_64
+--> Processing Dependency: pigz for package: docker-18.09.9ce-2.52.amzn1.x86_64
+--> Processing Dependency: libseccomp.so.2()(64bit) for package: docker-18.09.9ce-2.52.amzn1.x86_64
+--> Running transaction check
+---> Package containerd.x86_64 0:1.2.6-1.2.amzn1 will be installed
+---> Package libseccomp.x86_64 0:2.3.1-2.4.amzn1 will be installed
+---> Package pigz.x86_64 0:2.3.3-1.6.amzn1 will be installed
+---> Package runc.x86_64 0:1.0.0-0.1.20190510.git2b18fe1.0.amzn1 will be installed
+---> Package xfsprogs.x86_64 0:4.5.0-18.23.amzn1 will be installed
+--> Finished Dependency Resolution
+
+Dependencies Resolved
+
+============================================================================================================================================================================================================
+ Package                                    Arch                                   Version                                                               Repository                                    Size
+============================================================================================================================================================================================================
+Installing:
+ docker                                     x86_64                                 18.09.9ce-2.52.amzn1                                                  amzn-updates                                  35 M
+Installing for dependencies:
+ containerd                                 x86_64                                 1.2.6-1.2.amzn1                                                       amzn-updates                                  26 M
+ libseccomp                                 x86_64                                 2.3.1-2.4.amzn1                                                       amzn-main                                     79 k
+ pigz                                       x86_64                                 2.3.3-1.6.amzn1                                                       amzn-main                                     71 k
+ runc                                       x86_64                                 1.0.0-0.1.20190510.git2b18fe1.0.amzn1                                 amzn-updates                                 2.3 M
+ xfsprogs                                   x86_64                                 4.5.0-18.23.amzn1                                                     amzn-updates                                 1.7 M
+
+Transaction Summary
+============================================================================================================================================================================================================
+Install  1 Package (+5 Dependent packages)
+
+Total download size: 65 M
+Installed size: 223 M
+Is this ok [y/d/N]: y
+Downloading packages:
+(1/6): libseccomp-2.3.1-2.4.amzn1.x86_64.rpm                                                                                                                                         |  79 kB  00:00:00     
+(2/6): pigz-2.3.3-1.6.amzn1.x86_64.rpm                                                                                                                                               |  71 kB  00:00:00     
+(3/6): runc-1.0.0-0.1.20190510.git2b18fe1.0.amzn1.x86_64.rpm                                                                                                                         | 2.3 MB  00:00:00     
+(4/6): xfsprogs-4.5.0-18.23.amzn1.x86_64.rpm                                                                                                                                         | 1.7 MB  00:00:00     
+(5/6): containerd-1.2.6-1.2.amzn1.x86_64.rpm                                                                                                                                         |  26 MB  00:00:03     
+(6/6): docker-18.09.9ce-2.52.amzn1.x86_64.rpm                                                                                                                                        |  35 MB  00:00:05     
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Total                                                                                                                                                                        13 MB/s |  65 MB  00:00:05     
+Running transaction check
+Running transaction test
+Transaction test succeeded
+Running transaction
+  Installing : libseccomp-2.3.1-2.4.amzn1.x86_64                                                                                                                                                        1/6 
+  Installing : runc-1.0.0-0.1.20190510.git2b18fe1.0.amzn1.x86_64                                                                                                                                        2/6 
+  Installing : containerd-1.2.6-1.2.amzn1.x86_64                                                                                                                                                        3/6 
+  Installing : pigz-2.3.3-1.6.amzn1.x86_64                                                                                                                                                              4/6 
+  Installing : xfsprogs-4.5.0-18.23.amzn1.x86_64                                                                                                                                                        5/6 
+  Installing : docker-18.09.9ce-2.52.amzn1.x86_64                                                                                                                                                       6/6 
+  Verifying  : docker-18.09.9ce-2.52.amzn1.x86_64                                                                                                                                                       1/6 
+  Verifying  : xfsprogs-4.5.0-18.23.amzn1.x86_64                                                                                                                                                        2/6 
+  Verifying  : libseccomp-2.3.1-2.4.amzn1.x86_64                                                                                                                                                        3/6 
+  Verifying  : containerd-1.2.6-1.2.amzn1.x86_64                                                                                                                                                        4/6 
+  Verifying  : runc-1.0.0-0.1.20190510.git2b18fe1.0.amzn1.x86_64                                                                                                                                        5/6 
+  Verifying  : pigz-2.3.3-1.6.amzn1.x86_64                                                                                                                                                              6/6 
+
+Installed:
+  docker.x86_64 0:18.09.9ce-2.52.amzn1                                                                                                                                                                      
+
+Dependency Installed:
+  containerd.x86_64 0:1.2.6-1.2.amzn1   libseccomp.x86_64 0:2.3.1-2.4.amzn1   pigz.x86_64 0:2.3.3-1.6.amzn1   runc.x86_64 0:1.0.0-0.1.20190510.git2b18fe1.0.amzn1   xfsprogs.x86_64 0:4.5.0-18.23.amzn1  
+
+Complete!
+[ec2-user@ip-172-31-41-6 ~]$ sudo service docker start
+Starting cgconfig service:                                 [  OK  ]
+Starting docker:	.                                  [  OK  ]
+[ec2-user@ip-172-31-41-6 ~]$ sudo usermod -aG docker $USER
+[ec2-user@ip-172-31-41-6 ~]$ sudo     docker swarm join --token SWMTKN-1-64cpxvkwaw56n89rbyjm6jzhio52vxtw3zhlb784k6wmfkgboa-9dl0ed71oxpafsbljk1nqvj2o 172.31.35.38:2377
+
+This node joined a swarm as a worker.
+[ec2-user@ip-172-31-41-6 ~]$ 
+[ec2-user@ip-172-31-41-6 ~]$ exit
+logout
+Connection to 34.239.185.118 closed.
+➜  docker git:(master) ✗ ssh ec2-user@54.159.94.33  
+
+The authenticity of host '54.159.94.33 (54.159.94.33)' can't be established.
+ECDSA key fingerprint is SHA256:+gAiNwUyEbdqp/JsM60aZmE998UAwPZR3DdmKeL1Zfw.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added '54.159.94.33' (ECDSA) to the list of known hosts.
+
+       __|  __|_  )
+       _|  (     /   Amazon Linux AMI
+      ___|\___|___|
+
+https://aws.amazon.com/amazon-linux-ami/2018.03-release-notes/
+7 package(s) needed for security, out of 11 available
+Run "sudo yum update" to apply all updates.
+-bash: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory
+[ec2-user@ip-172-31-47-93 ~]$ sudo yum install docker
+Failed to set locale, defaulting to C
+Loaded plugins: priorities, update-motd, upgrade-helper
+amzn-main                                                                                                                                                                            | 2.1 kB  00:00:00     
+amzn-updates                                                                                                                                                                         | 2.5 kB  00:00:00     
+Resolving Dependencies
+--> Running transaction check
+---> Package docker.x86_64 0:18.09.9ce-2.52.amzn1 will be installed
+--> Processing Dependency: runc = 1.0.0 for package: docker-18.09.9ce-2.52.amzn1.x86_64
+--> Processing Dependency: containerd = 1.2.6 for package: docker-18.09.9ce-2.52.amzn1.x86_64
+--> Processing Dependency: xfsprogs for package: docker-18.09.9ce-2.52.amzn1.x86_64
+--> Processing Dependency: pigz for package: docker-18.09.9ce-2.52.amzn1.x86_64
+--> Processing Dependency: libseccomp.so.2()(64bit) for package: docker-18.09.9ce-2.52.amzn1.x86_64
+--> Running transaction check
+---> Package containerd.x86_64 0:1.2.6-1.2.amzn1 will be installed
+---> Package libseccomp.x86_64 0:2.3.1-2.4.amzn1 will be installed
+---> Package pigz.x86_64 0:2.3.3-1.6.amzn1 will be installed
+---> Package runc.x86_64 0:1.0.0-0.1.20190510.git2b18fe1.0.amzn1 will be installed
+---> Package xfsprogs.x86_64 0:4.5.0-18.23.amzn1 will be installed
+--> Finished Dependency Resolution
+
+Dependencies Resolved
+
+============================================================================================================================================================================================================
+ Package                                    Arch                                   Version                                                               Repository                                    Size
+============================================================================================================================================================================================================
+Installing:
+ docker                                     x86_64                                 18.09.9ce-2.52.amzn1                                                  amzn-updates                                  35 M
+Installing for dependencies:
+ containerd                                 x86_64                                 1.2.6-1.2.amzn1                                                       amzn-updates                                  26 M
+ libseccomp                                 x86_64                                 2.3.1-2.4.amzn1                                                       amzn-main                                     79 k
+ pigz                                       x86_64                                 2.3.3-1.6.amzn1                                                       amzn-main                                     71 k
+ runc                                       x86_64                                 1.0.0-0.1.20190510.git2b18fe1.0.amzn1                                 amzn-updates                                 2.3 M
+ xfsprogs                                   x86_64                                 4.5.0-18.23.amzn1                                                     amzn-updates                                 1.7 M
+
+Transaction Summary
+============================================================================================================================================================================================================
+Install  1 Package (+5 Dependent packages)
+
+Total download size: 65 M
+Installed size: 223 M
+Is this ok [y/d/N]: y
+Downloading packages:
+(1/6): libseccomp-2.3.1-2.4.amzn1.x86_64.rpm                                                                                                                                         |  79 kB  00:00:00     
+(2/6): pigz-2.3.3-1.6.amzn1.x86_64.rpm                                                                                                                                               |  71 kB  00:00:00     
+(3/6): runc-1.0.0-0.1.20190510.git2b18fe1.0.amzn1.x86_64.rpm                                                                                                                         | 2.3 MB  00:00:01     
+(4/6): xfsprogs-4.5.0-18.23.amzn1.x86_64.rpm                                                                                                                                         | 1.7 MB  00:00:00     
+(5/6): docker-18.09.9ce-2.52.amzn1.x86_64.rpm                                                                                                                                        |  35 MB  00:00:04     
+(6/6): containerd-1.2.6-1.2.amzn1.x86_64.rpm                                                                                                                                         |  26 MB  00:00:06     
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Total                                                                                                                                                                       9.9 MB/s |  65 MB  00:00:06     
+Running transaction check
+Running transaction test
+Transaction test succeeded
+Running transaction
+  Installing : libseccomp-2.3.1-2.4.amzn1.x86_64                                                                                                                                                        1/6 
+  Installing : runc-1.0.0-0.1.20190510.git2b18fe1.0.amzn1.x86_64                                                                                                                                        2/6 
+  Installing : containerd-1.2.6-1.2.amzn1.x86_64                                                                                                                                                        3/6 
+  Installing : pigz-2.3.3-1.6.amzn1.x86_64                                                                                                                                                              4/6 
+  Installing : xfsprogs-4.5.0-18.23.amzn1.x86_64                                                                                                                                                        5/6 
+  Installing : docker-18.09.9ce-2.52.amzn1.x86_64                                                                                                                                                       6/6 
+  Verifying  : docker-18.09.9ce-2.52.amzn1.x86_64                                                                                                                                                       1/6 
+  Verifying  : xfsprogs-4.5.0-18.23.amzn1.x86_64                                                                                                                                                        2/6 
+  Verifying  : libseccomp-2.3.1-2.4.amzn1.x86_64                                                                                                                                                        3/6 
+  Verifying  : containerd-1.2.6-1.2.amzn1.x86_64                                                                                                                                                        4/6 
+  Verifying  : runc-1.0.0-0.1.20190510.git2b18fe1.0.amzn1.x86_64                                                                                                                                        5/6 
+  Verifying  : pigz-2.3.3-1.6.amzn1.x86_64                                                                                                                                                              6/6 
+
+Installed:
+  docker.x86_64 0:18.09.9ce-2.52.amzn1                                                                                                                                                                      
+
+Dependency Installed:
+  containerd.x86_64 0:1.2.6-1.2.amzn1   libseccomp.x86_64 0:2.3.1-2.4.amzn1   pigz.x86_64 0:2.3.3-1.6.amzn1   runc.x86_64 0:1.0.0-0.1.20190510.git2b18fe1.0.amzn1   xfsprogs.x86_64 0:4.5.0-18.23.amzn1  
+
+Complete!
+[ec2-user@ip-172-31-47-93 ~]$ sudo usermod -aG docker $USER
+[ec2-user@ip-172-31-47-93 ~]$ sudo service docker start
+Starting cgconfig service:                                 [  OK  ]
+Starting docker:	.                                  [  OK  ]
+[ec2-user@ip-172-31-47-93 ~]$ sudo     docker swarm join --token SWMTKN-1-64cpxvkwaw56n89rbyjm6jzhio52vxtw3zhlb784k6wmfkgboa-9dl0ed71oxpafsbljk1nqvj2o 172.31.35.38:2377
+This node joined a swarm as a worker.
+[ec2-user@ip-172-31-47-93 ~]$ 
+[ec2-user@ip-172-31-47-93 ~]$ exit
+logout
+Connection to 54.159.94.33 closed.
+➜  docker git:(master) ✗ ssh ec2-user@54.196.192.119
+The authenticity of host '54.196.192.119 (54.196.192.119)' can't be established.
+ECDSA key fingerprint is SHA256:JKWlw+bb4vTpeAVlS5Tg4uAnBl5L9Q1QLnfkfRIGFJc.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added '54.196.192.119' (ECDSA) to the list of known hosts.
+sudo 
+       __|  __|_  )
+       _|  (     /   Amazon Linux AMI
+      ___|\___|___|
+
+https://aws.amazon.com/amazon-linux-ami/2018.03-release-notes/
+7 package(s) needed for security, out of 11 available
+Run "sudo yum update" to apply all updates.
+-bash: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory
+[ec2-user@ip-172-31-33-27 ~]$ sudo yum install docker
+Failed to set locale, defaulting to C
+Loaded plugins: priorities, update-motd, upgrade-helper
+amzn-main                                                                                                                                                                            | 2.1 kB  00:00:00     
+amzn-updates                                                                                                                                                                         | 2.5 kB  00:00:00     
+Resolving Dependencies
+--> Running transaction check
+---> Package docker.x86_64 0:18.09.9ce-2.52.amzn1 will be installed
+--> Processing Dependency: runc = 1.0.0 for package: docker-18.09.9ce-2.52.amzn1.x86_64
+--> Processing Dependency: containerd = 1.2.6 for package: docker-18.09.9ce-2.52.amzn1.x86_64
+--> Processing Dependency: xfsprogs for package: docker-18.09.9ce-2.52.amzn1.x86_64
+--> Processing Dependency: pigz for package: docker-18.09.9ce-2.52.amzn1.x86_64
+--> Processing Dependency: libseccomp.so.2()(64bit) for package: docker-18.09.9ce-2.52.amzn1.x86_64
+--> Running transaction check
+---> Package containerd.x86_64 0:1.2.6-1.2.amzn1 will be installed
+---> Package libseccomp.x86_64 0:2.3.1-2.4.amzn1 will be installed
+---> Package pigz.x86_64 0:2.3.3-1.6.amzn1 will be installed
+---> Package runc.x86_64 0:1.0.0-0.1.20190510.git2b18fe1.0.amzn1 will be installed
+---> Package xfsprogs.x86_64 0:4.5.0-18.23.amzn1 will be installed
+--> Finished Dependency Resolution
+
+Dependencies Resolved
+
+============================================================================================================================================================================================================
+ Package                                    Arch                                   Version                                                               Repository                                    Size
+============================================================================================================================================================================================================
+Installing:
+ docker                                     x86_64                                 18.09.9ce-2.52.amzn1                                                  amzn-updates                                  35 M
+Installing for dependencies:
+ containerd                                 x86_64                                 1.2.6-1.2.amzn1                                                       amzn-updates                                  26 M
+ libseccomp                                 x86_64                                 2.3.1-2.4.amzn1                                                       amzn-main                                     79 k
+ pigz                                       x86_64                                 2.3.3-1.6.amzn1                                                       amzn-main                                     71 k
+ runc                                       x86_64                                 1.0.0-0.1.20190510.git2b18fe1.0.amzn1                                 amzn-updates                                 2.3 M
+ xfsprogs                                   x86_64                                 4.5.0-18.23.amzn1                                                     amzn-updates                                 1.7 M
+
+Transaction Summary
+============================================================================================================================================================================================================
+Install  1 Package (+5 Dependent packages)
+
+Total download size: 65 M
+Installed size: 223 M
+Is this ok [y/d/N]: y
+Downloading packages:
+(1/6): libseccomp-2.3.1-2.4.amzn1.x86_64.rpm                                                                                                                                         |  79 kB  00:00:00     
+(2/6): pigz-2.3.3-1.6.amzn1.x86_64.rpm                                                                                                                                               |  71 kB  00:00:00     
+(3/6): runc-1.0.0-0.1.20190510.git2b18fe1.0.amzn1.x86_64.rpm                                                                                                                         | 2.3 MB  00:00:00     
+(4/6): xfsprogs-4.5.0-18.23.amzn1.x86_64.rpm                                                                                                                                         | 1.7 MB  00:00:00     
+(5/6): containerd-1.2.6-1.2.amzn1.x86_64.rpm                                                                                                                                         |  26 MB  00:00:03     
+(6/6): docker-18.09.9ce-2.52.amzn1.x86_64.rpm                                                                                                                                        |  35 MB  00:00:04     
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Total                                                                                                                                                                        14 MB/s |  65 MB  00:00:04     
+Running transaction check
+Running transaction test
+dTransaction test succeeded
+Running transaction
+  Installing : libseccomp-2.3.1-2.4.amzn1.x86_64                                                                                                                                                        1/6 
+  Installing : runc-1.0.0-0.1.20190510.git2b18fe1.0.amzn1.x86_64                                                                                                                                        2/6 
+  Installing : containerd-1.2.6-1.2.amzn1.x86_64                                                                                                                                                        3/6 
+  Installing : pigz-2.3.3-1.6.amzn1.x86_64                                                                                                                                                              4/6 
+  Installing : xfsprogs-4.5.0-18.23.amzn1.x86_64                                                                                                                                                        5/6 
+  Installing : docker-18.09.9ce-2.52.amzn1.x86_64                                                                                                                                                       6/6 
+  Verifying  : docker-18.09.9ce-2.52.amzn1.x86_64                                                                                                                                                       1/6 
+  Verifying  : xfsprogs-4.5.0-18.23.amzn1.x86_64                                                                                                                                                        2/6 
+  Verifying  : libseccomp-2.3.1-2.4.amzn1.x86_64                                                                                                                                                        3/6 
+  Verifying  : containerd-1.2.6-1.2.amzn1.x86_64                                                                                                                                                        4/6 
+  Verifying  : runc-1.0.0-0.1.20190510.git2b18fe1.0.amzn1.x86_64                                                                                                                                        5/6 
+  Verifying  : pigz-2.3.3-1.6.amzn1.x86_64                                                                                                                                                              6/6 
+
+Installed:
+  docker.x86_64 0:18.09.9ce-2.52.amzn1                                                                                                                                                                      
+
+Dependency Installed:
+  containerd.x86_64 0:1.2.6-1.2.amzn1   libseccomp.x86_64 0:2.3.1-2.4.amzn1   pigz.x86_64 0:2.3.3-1.6.amzn1   runc.x86_64 0:1.0.0-0.1.20190510.git2b18fe1.0.amzn1   xfsprogs.x86_64 0:4.5.0-18.23.amzn1  
+
+Complete!
+[ec2-user@ip-172-31-33-27 ~]$ sudo service docker start
+Starting cgconfig service:                                 [  OK  ]
+Starting docker:	.                                  [  OK  ]
+[ec2-user@ip-172-31-33-27 ~]$ sudo usermod -aG docker $USER
+[ec2-user@ip-172-31-33-27 ~]$ sudo     docker swarm join --token SWMTKN-1-64cpxvkwaw56n89rbyjm6jzhio52vxtw3zhlb784k6wmfkgboa-9dl0ed71oxpafsbljk1nqvj2o 172.31.35.38:2377
+
+This node joined a swarm as a worker.
+[ec2-user@ip-172-31-33-27 ~]$ 
+[ec2-user@ip-172-31-33-27 ~]$ exit
+logout
+Connection to 54.196.192.119 closed.
+➜  docker git:(master) ✗ ssh ec2-user@54.166.133.164
+sThe authenticity of host '54.166.133.164 (54.166.133.164)' can't be established.
+ECDSA key fingerprint is SHA256:moyZcXaD5BUwOhkl3xOFvgrEIDsMWPyvAAllvrs1PwA.
+Are you sure you want to continue connecting (yes/no)? yes  
+Warning: Permanently added '54.166.133.164' (ECDSA) to the list of known hosts.
+sudo 
+       __|  __|_  )
+       _|  (     /   Amazon Linux AMI
+      ___|\___|___|
+
+https://aws.amazon.com/amazon-linux-ami/2018.03-release-notes/
+7 package(s) needed for security, out of 11 available
+Run "sudo yum update" to apply all updates.
+-bash: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory
+[ec2-user@ip-172-31-40-251 ~]$ sudo yum install docker
+Failed to set locale, defaulting to C
+Loaded plugins: priorities, update-motd, upgrade-helper
+amzn-main                                                                                                                                                                            | 2.1 kB  00:00:00     
+amzn-updates                                                                                                                                                                         | 2.5 kB  00:00:00     
+Resolving Dependencies
+--> Running transaction check
+---> Package docker.x86_64 0:18.09.9ce-2.52.amzn1 will be installed
+--> Processing Dependency: runc = 1.0.0 for package: docker-18.09.9ce-2.52.amzn1.x86_64
+--> Processing Dependency: containerd = 1.2.6 for package: docker-18.09.9ce-2.52.amzn1.x86_64
+--> Processing Dependency: xfsprogs for package: docker-18.09.9ce-2.52.amzn1.x86_64
+--> Processing Dependency: pigz for package: docker-18.09.9ce-2.52.amzn1.x86_64
+--> Processing Dependency: libseccomp.so.2()(64bit) for package: docker-18.09.9ce-2.52.amzn1.x86_64
+--> Running transaction check
+---> Package containerd.x86_64 0:1.2.6-1.2.amzn1 will be installed
+---> Package libseccomp.x86_64 0:2.3.1-2.4.amzn1 will be installed
+---> Package pigz.x86_64 0:2.3.3-1.6.amzn1 will be installed
+---> Package runc.x86_64 0:1.0.0-0.1.20190510.git2b18fe1.0.amzn1 will be installed
+---> Package xfsprogs.x86_64 0:4.5.0-18.23.amzn1 will be installed
+--> Finished Dependency Resolution
+
+Dependencies Resolved
+
+============================================================================================================================================================================================================
+ Package                                    Arch                                   Version                                                               Repository                                    Size
+============================================================================================================================================================================================================
+Installing:
+ docker                                     x86_64                                 18.09.9ce-2.52.amzn1                                                  amzn-updates                                  35 M
+Installing for dependencies:
+ containerd                                 x86_64                                 1.2.6-1.2.amzn1                                                       amzn-updates                                  26 M
+ libseccomp                                 x86_64                                 2.3.1-2.4.amzn1                                                       amzn-main                                     79 k
+ pigz                                       x86_64                                 2.3.3-1.6.amzn1                                                       amzn-main                                     71 k
+ runc                                       x86_64                                 1.0.0-0.1.20190510.git2b18fe1.0.amzn1                                 amzn-updates                                 2.3 M
+ xfsprogs                                   x86_64                                 4.5.0-18.23.amzn1                                                     amzn-updates                                 1.7 M
+
+Transaction Summary
+============================================================================================================================================================================================================
+Install  1 Package (+5 Dependent packages)
+
+Total download size: 65 M
+Installed size: 223 M
+Is this ok [y/d/N]: y
+Downloading packages:
+(1/6): libseccomp-2.3.1-2.4.amzn1.x86_64.rpm                                                                                                                                         |  79 kB  00:00:00     
+(2/6): pigz-2.3.3-1.6.amzn1.x86_64.rpm                                                                                                                                               |  71 kB  00:00:00     
+(3/6): runc-1.0.0-0.1.20190510.git2b18fe1.0.amzn1.x86_64.rpm                                                                                                                         | 2.3 MB  00:00:00     
+(4/6): xfsprogs-4.5.0-18.23.amzn1.x86_64.rpm                                                                                                                                         | 1.7 MB  00:00:00     
+(5/6): docker-18.09.9ce-2.52.amzn1.x86_64.rpm                                                                                                                                        |  35 MB  00:00:03     
+(6/6): containerd-1.2.6-1.2.amzn1.x86_64.rpm                                                                                                                                         |  26 MB  00:00:03     
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Total                                                                                                                                                                        17 MB/s |  65 MB  00:00:03     
+Running transaction check
+Running transaction test
+Transaction test succeeded
+Running transaction
+  Installing : libseccomp-2.3.1-2.4.amzn1.x86_64                                                                                                                                                        1/6 
+  Installing : runc-1.0.0-0.1.20190510.git2b18fe1.0.amzn1.x86_64                                                                                                                                        2/6 
+  Installing : containerd-1.2.6-1.2.amzn1.x86_64                                                                                                                                                        3/6 
+  Installing : pigz-2.3.3-1.6.amzn1.x86_64                                                                                                                                                              4/6 
+  Installing : xfsprogs-4.5.0-18.23.amzn1.x86_64                                                                                                                                                        5/6 
+  Installing : docker-18.09.9ce-2.52.amzn1.x86_64                                                                                                                                                       6/6 
+  Verifying  : docker-18.09.9ce-2.52.amzn1.x86_64                                                                                                                                                       1/6 
+  Verifying  : xfsprogs-4.5.0-18.23.amzn1.x86_64                                                                                                                                                        2/6 
+  Verifying  : libseccomp-2.3.1-2.4.amzn1.x86_64                                                                                                                                                        3/6 
+  Verifying  : containerd-1.2.6-1.2.amzn1.x86_64                                                                                                                                                        4/6 
+  Verifying  : runc-1.0.0-0.1.20190510.git2b18fe1.0.amzn1.x86_64                                                                                                                                        5/6 
+  Verifying  : pigz-2.3.3-1.6.amzn1.x86_64                                                                                                                                                              6/6 
+
+Installed:
+  docker.x86_64 0:18.09.9ce-2.52.amzn1                                                                                                                                                                      
+
+Dependency Installed:
+  containerd.x86_64 0:1.2.6-1.2.amzn1   libseccomp.x86_64 0:2.3.1-2.4.amzn1   pigz.x86_64 0:2.3.3-1.6.amzn1   runc.x86_64 0:1.0.0-0.1.20190510.git2b18fe1.0.amzn1   xfsprogs.x86_64 0:4.5.0-18.23.amzn1  
+
+Complete!
+[ec2-user@ip-172-31-40-251 ~]$ sudo service docker instart
+Usage: /etc/init.d/docker {start|stop|status|restart|condrestart|try-restart|reload|force-reload}
+[ec2-user@ip-172-31-40-251 ~]$ sudo service docker start
+Starting cgconfig service:                                 [  OK  ]
+Starting docker:	.                                  [  OK  ]
+[ec2-user@ip-172-31-40-251 ~]$ sudo     docker swarm join --token SWMTKN-1-64cpxvkwaw56n89rbyjm6jzhio52vxtw3zhlb784k6wmfkgboa-9dl0ed71oxpafsbljk1nqvj2o 172.31.35.38:2377
+This node joined a swarm as a worker.
+[ec2-user@ip-172-31-40-251 ~]$ 
+[ec2-user@ip-172-31-40-251 ~]$ sudo usermod -aG docker $USER
+[ec2-user@ip-172-31-40-251 ~]$ exit
+logout
+Connection to 54.166.133.164 closed.
+➜  docker git:(master) ✗ ssh ec2-user@3.92.143.110  
+The authenticity of host '3.92.143.110 (3.92.143.110)' can't be established.
+ECDSA key fingerprint is SHA256:xyU7GH5/8LiLJELmBZhRrOi/JfiS0t0zNhT4gDRq2PA.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added '3.92.143.110' (ECDSA) to the list of known hosts.
+
+       __|  __|_  )
+       _|  (     /   Amazon Linux AMI
+      ___|\___|___|
+
+https://aws.amazon.com/amazon-linux-ami/2018.03-release-notes/
+7 package(s) needed for security, out of 11 available
+Run "sudo yum update" to apply all updates.
+-bash: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory
+[ec2-user@ip-172-31-45-190 ~]$ sudo yum install docker
+Failed to set locale, defaulting to C
+Loaded plugins: priorities, update-motd, upgrade-helper
+amzn-main                                                                                                                                                                            | 2.1 kB  00:00:00     
+amzn-updates                                                                                                                                                                         | 2.5 kB  00:00:00     
+Resolving Dependencies
+--> Running transaction check
+---> Package docker.x86_64 0:18.09.9ce-2.52.amzn1 will be installed
+--> Processing Dependency: runc = 1.0.0 for package: docker-18.09.9ce-2.52.amzn1.x86_64
+--> Processing Dependency: containerd = 1.2.6 for package: docker-18.09.9ce-2.52.amzn1.x86_64
+--> Processing Dependency: xfsprogs for package: docker-18.09.9ce-2.52.amzn1.x86_64
+--> Processing Dependency: pigz for package: docker-18.09.9ce-2.52.amzn1.x86_64
+--> Processing Dependency: libseccomp.so.2()(64bit) for package: docker-18.09.9ce-2.52.amzn1.x86_64
+--> Running transaction check
+---> Package containerd.x86_64 0:1.2.6-1.2.amzn1 will be installed
+---> Package libseccomp.x86_64 0:2.3.1-2.4.amzn1 will be installed
+---> Package pigz.x86_64 0:2.3.3-1.6.amzn1 will be installed
+---> Package runc.x86_64 0:1.0.0-0.1.20190510.git2b18fe1.0.amzn1 will be installed
+---> Package xfsprogs.x86_64 0:4.5.0-18.23.amzn1 will be installed
+--> Finished Dependency Resolution
+
+Dependencies Resolved
+
+============================================================================================================================================================================================================
+ Package                                    Arch                                   Version                                                               Repository                                    Size
+============================================================================================================================================================================================================
+Installing:
+ docker                                     x86_64                                 18.09.9ce-2.52.amzn1                                                  amzn-updates                                  35 M
+Installing for dependencies:
+ containerd                                 x86_64                                 1.2.6-1.2.amzn1                                                       amzn-updates                                  26 M
+ libseccomp                                 x86_64                                 2.3.1-2.4.amzn1                                                       amzn-main                                     79 k
+ pigz                                       x86_64                                 2.3.3-1.6.amzn1                                                       amzn-main                                     71 k
+ runc                                       x86_64                                 1.0.0-0.1.20190510.git2b18fe1.0.amzn1                                 amzn-updates                                 2.3 M
+ xfsprogs                                   x86_64                                 4.5.0-18.23.amzn1                                                     amzn-updates                                 1.7 M
+
+Transaction Summary
+============================================================================================================================================================================================================
+Install  1 Package (+5 Dependent packages)
+
+Total download size: 65 M
+Installed size: 223 M
+Is this ok [y/d/N]: yu
+Is this ok [y/d/N]: y
+Downloading packages:
+(1/6): libseccomp-2.3.1-2.4.amzn1.x86_64.rpm                                                                                                                                         |  79 kB  00:00:00     
+(2/6): pigz-2.3.3-1.6.amzn1.x86_64.rpm                                                                                                                                               |  71 kB  00:00:00     
+(3/6): runc-1.0.0-0.1.20190510.git2b18fe1.0.amzn1.x86_64.rpm                                                                                                                         | 2.3 MB  00:00:00     
+(4/6): xfsprogs-4.5.0-18.23.amzn1.x86_64.rpm                                                                                                                                         | 1.7 MB  00:00:00     
+(5/6): containerd-1.2.6-1.2.amzn1.x86_64.rpm                                                                                                                                         |  26 MB  00:00:03     
+(6/6): docker-18.09.9ce-2.52.amzn1.x86_64.rpm                                                                                                                                        |  35 MB  00:00:04     
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Total                                                                                                                                                                        16 MB/s |  65 MB  00:00:04     
+Running transaction check
+Running transaction test
+Transaction test succeeded
+Running transaction
+  Installing : libseccomp-2.3.1-2.4.amzn1.x86_64                                                                                                                                                        1/6 
+  Installing : runc-1.0.0-0.1.20190510.git2b18fe1.0.amzn1.x86_64                                                                                                                                        2/6 
+  Installing : containerd-1.2.6-1.2.amzn1.x86_64                                                                                                                                                        3/6 
+  Installing : pigz-2.3.3-1.6.amzn1.x86_64                                                                                                                                                              4/6 
+  Installing : xfsprogs-4.5.0-18.23.amzn1.x86_64                                                                                                                                                        5/6 
+  Installing : docker-18.09.9ce-2.52.amzn1.x86_64 [#################################################################################################################################################  ] 6/6o  Installing : docker-18.09.9ce-2.52.amzn1.x86_64                                                                                                                                                       6/6 
+  Verifying  : docker-18.09.9ce-2.52.amzn1.x86_64                                                                                                                                                       1/6 
+  Verifying  : xfsprogs-4.5.0-18.23.amzn1.x86_64                                                                                                                                                        2/6 
+  Verifying  : libseccomp-2.3.1-2.4.amzn1.x86_64                                                                                                                                                        3/6 
+  Verifying  : containerd-1.2.6-1.2.amzn1.x86_64                                                                                                                                                        4/6 
+  Verifying  : runc-1.0.0-0.1.20190510.git2b18fe1.0.amzn1.x86_64                                                                                                                                        5/6 
+  Verifying  : pigz-2.3.3-1.6.amzn1.x86_64                                                                                                                                                              6/6 
+t
+Installed:
+  docker.x86_64 0:18.09.9ce-2.52.amzn1                                                                                                                                                                      
+
+Dependency Installed:
+  containerd.x86_64 0:1.2.6-1.2.amzn1   libseccomp.x86_64 0:2.3.1-2.4.amzn1   pigz.x86_64 0:2.3.3-1.6.amzn1   runc.x86_64 0:1.0.0-0.1.20190510.git2b18fe1.0.amzn1   xfsprogs.x86_64 0:4.5.0-18.23.amzn1  
+
+Complete!
+[ec2-user@ip-172-31-45-190 ~]$ sudo dservice docker start
+sudo: dservice: command not found
+[ec2-user@ip-172-31-45-190 ~]$ sudo service docker start
+Starting cgconfig service:                                 [  OK  ]
+Starting docker:	.                                  [  OK  ]
+[ec2-user@ip-172-31-45-190 ~]$ sudo     docker swarm join --token SWMTKN-1-64cpxvkwaw56n89rbyjm6jzhio52vxtw3zhlb784k6wmfkgboa-9dl0ed71oxpafsbljk1nqvj2o 172.31.35.38:2377
+This node joined a swarm as a worker.
+[ec2-user@ip-172-31-45-190 ~]$ 
+[ec2-user@ip-172-31-45-190 ~]$ exit
+logout
+Connection to 3.92.143.110 closed.
+➜  docker git:(master) ✗ ssh ec2-user@54.161.62.124 
+The authenticity of host '54.161.62.124 (54.161.62.124)' can't be established.
+ECDSA key fingerprint is SHA256:7VdZVv8CM56Bi+oIGPdS1/Q3CG9Sjx94oWu9610WySY.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added '54.161.62.124' (ECDSA) to the list of known hosts.
+sudo
+       __|  __|_  )
+       _|  (     /   Amazon Linux AMI
+      ___|\___|___|
+
+https://aws.amazon.com/amazon-linux-ami/2018.03-release-notes/
+7 package(s) needed for security, out of 11 available
+Run "sudo yum update" to apply all updates.
+-bash: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory
+[ec2-user@ip-172-31-39-88 ~]$ sudo yum install docker
+Failed to set locale, defaulting to C
+Loaded plugins: priorities, update-motd, upgrade-helper
+amzn-main                                                                                                                                                                            | 2.1 kB  00:00:00     
+amzn-updates                                                                                                                                                                         | 2.5 kB  00:00:00     
+Resolving Dependencies
+--> Running transaction check
+---> Package docker.x86_64 0:18.09.9ce-2.52.amzn1 will be installed
+--> Processing Dependency: runc = 1.0.0 for package: docker-18.09.9ce-2.52.amzn1.x86_64
+--> Processing Dependency: containerd = 1.2.6 for package: docker-18.09.9ce-2.52.amzn1.x86_64
+--> Processing Dependency: xfsprogs for package: docker-18.09.9ce-2.52.amzn1.x86_64
+--> Processing Dependency: pigz for package: docker-18.09.9ce-2.52.amzn1.x86_64
+--> Processing Dependency: libseccomp.so.2()(64bit) for package: docker-18.09.9ce-2.52.amzn1.x86_64
+--> Running transaction check
+---> Package containerd.x86_64 0:1.2.6-1.2.amzn1 will be installed
+---> Package libseccomp.x86_64 0:2.3.1-2.4.amzn1 will be installed
+---> Package pigz.x86_64 0:2.3.3-1.6.amzn1 will be installed
+---> Package runc.x86_64 0:1.0.0-0.1.20190510.git2b18fe1.0.amzn1 will be installed
+---> Package xfsprogs.x86_64 0:4.5.0-18.23.amzn1 will be installed
+--> Finished Dependency Resolution
+
+Dependencies Resolved
+
+============================================================================================================================================================================================================
+ Package                                    Arch                                   Version                                                               Repository                                    Size
+============================================================================================================================================================================================================
+Installing:
+ docker                                     x86_64                                 18.09.9ce-2.52.amzn1                                                  amzn-updates                                  35 M
+Installing for dependencies:
+ containerd                                 x86_64                                 1.2.6-1.2.amzn1                                                       amzn-updates                                  26 M
+ libseccomp                                 x86_64                                 2.3.1-2.4.amzn1                                                       amzn-main                                     79 k
+ pigz                                       x86_64                                 2.3.3-1.6.amzn1                                                       amzn-main                                     71 k
+ runc                                       x86_64                                 1.0.0-0.1.20190510.git2b18fe1.0.amzn1                                 amzn-updates                                 2.3 M
+ xfsprogs                                   x86_64                                 4.5.0-18.23.amzn1                                                     amzn-updates                                 1.7 M
+
+Transaction Summary
+============================================================================================================================================================================================================
+Install  1 Package (+5 Dependent packages)
+
+Total download size: 65 M
+Installed size: 223 M
+Is this ok [y/d/N]: y
+Downloading packages:
+(1/6): libseccomp-2.3.1-2.4.amzn1.x86_64.rpm                                                                                                                                         |  79 kB  00:00:00     
+(2/6): pigz-2.3.3-1.6.amzn1.x86_64.rpm                                                                                                                                               |  71 kB  00:00:00     
+(3/6): runc-1.0.0-0.1.20190510.git2b18fe1.0.amzn1.x86_64.rpm                                                                                                                         | 2.3 MB  00:00:00     
+(4/6): xfsprogs-4.5.0-18.23.amzn1.x86_64.rpm                                                                                                                                         | 1.7 MB  00:00:00     
+(5/6): containerd-1.2.6-1.2.amzn1.x86_64.rpm                                                                                                                                         |  26 MB  00:00:03     
+(6/6): docker-18.09.9ce-2.52.amzn1.x86_64.rpm                                                                                                                                        |  35 MB  00:00:05     
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Total                                                                                                                                                                        13 MB/s |  65 MB  00:00:05     
+Running transaction check
+oRunning transaction test
+Transaction test succeeded
+Running transaction
+  Installing : libseccomp-2.3.1-2.4.amzn1.x86_64                                                                                                                                                        1/6 
+  Installing : runc-1.0.0-0.1.20190510.git2b18fe1.0.amzn1.x86_64                                                                                                                                        2/6 
+  Installing : containerd-1.2.6-1.2.amzn1.x86_64                                                                                                                                                        3/6 
+  Installing : pigz-2.3.3-1.6.amzn1.x86_64                                                                                                                                                              4/6 
+  Installing : xfsprogs-4.5.0-18.23.amzn1.x86_64                                                                                                                                                        5/6 
+  Installing : docker-18.09.9ce-2.52.amzn1.x86_64 [#################################################################################################################################################  ] 6/6d  Installing : docker-18.09.9ce-2.52.amzn1.x86_64                                                                                                                                                       6/6 
+  Verifying  : docker-18.09.9ce-2.52.amzn1.x86_64                                                                                                                                                       1/6 
+  Verifying  : xfsprogs-4.5.0-18.23.amzn1.x86_64                                                                                                                                                        2/6 
+  Verifying  : libseccomp-2.3.1-2.4.amzn1.x86_64                                                                                                                                                        3/6 
+  Verifying  : containerd-1.2.6-1.2.amzn1.x86_64                                                                                                                                                        4/6 
+  Verifying  : runc-1.0.0-0.1.20190510.git2b18fe1.0.amzn1.x86_64                                                                                                                                        5/6 
+  Verifying  : pigz-2.3.3-1.6.amzn1.x86_64                                                                                                                                                              6/6 
+ 
+Installed:
+  docker.x86_64 0:18.09.9ce-2.52.amzn1                                                                                                                                                                      
+
+Dependency Installed:
+  containerd.x86_64 0:1.2.6-1.2.amzn1   libseccomp.x86_64 0:2.3.1-2.4.amzn1   pigz.x86_64 0:2.3.3-1.6.amzn1   runc.x86_64 0:1.0.0-0.1.20190510.git2b18fe1.0.amzn1   xfsprogs.x86_64 0:4.5.0-18.23.amzn1  
+
+Complete!
+[ec2-user@ip-172-31-39-88 ~]$ sudo service docker start
+Starting cgconfig service:                                 [  OK  ]
+Starting docker:	.                                  [  OK  ]
+[ec2-user@ip-172-31-39-88 ~]$ sudo     docker swarm join --token SWMTKN-1-64cpxvkwaw56n89rbyjm6jzhio52vxtw3zhlb784k6wmfkgboa-9dl0ed71oxpafsbljk1nqvj2o 172.31.35.38:2377
+
+This node joined a swarm as a worker.
+[ec2-user@ip-172-31-39-88 ~]$ 
+[ec2-user@ip-172-31-39-88 ~]$ exit
+logout
+Connection to 54.161.62.124 closed.
+➜  docker git:(master) ✗ 
